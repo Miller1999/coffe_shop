@@ -1,0 +1,7 @@
+{% comment %} Este es el html que estamos generando, pues estamos en un template {% endcomment %}
+<form action="{% url "add_product"%}" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit">Add</button>
+
+</form>
