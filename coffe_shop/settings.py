@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+#! Se deben registrar TODAS las apps que creemos
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "crispy_tailwind",
     "products",
     "users",
+    "orders",
 ]
 
 MIDDLEWARE = [
