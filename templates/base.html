@@ -8,7 +8,13 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<body>
-		<!-- Este block content es una etiqueta donde podemos meter info de otro lado como un virtual DOM -->
+		{% comment %} Aqui estamos validando si el usuario esta logeado {% endcomment %}
+		Hola, {% if user.is_authenticated %} 
+			{{user.username}} 
+		{% else %} 
+			<a href="{% url "login" %}">Login</a>
+			{% endif %}
+			<!-- Este block content es una etiqueta donde podemos meter info de otro lado como un virtual DOM -->
 		<div class="container mx-auto px-4">
 			{% block content %} {% endblock content %}
 		</div>
