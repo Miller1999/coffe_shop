@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.views import generic
 from django.urls import reverse_lazy
 from .forms import ProductForm
+from products.models import Product
 
 # Create your views here.
 # Se usa form_valid para validar el form
@@ -16,3 +17,9 @@ class ProductFormView(generic.FormView):
     def form_valid(self, form: any) -> HttpResponse:
         form.save()
         return super().form_valid(form)
+
+
+class ProductListView(generic.ListView):
+    model = Product
+    template_name = "products/list_product.html"
+    context_object_name = "products"
