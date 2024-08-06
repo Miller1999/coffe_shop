@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %}
 <h1 class="text-3xl font-bold underline">Products List</h1>
-<ul>
+<div class="grid grid-cols-1 gap-4 md:grid-cols-4 md:gap-8 mt-8">
 	{% for product in products %}
 	<a href="#" class="group relative block overflow-hidden w-fit">
 		<button
@@ -54,8 +54,7 @@
 		</div>
 	</a>
 	{% endfor %}
-</ul>
-
+</div>
 {% endblock content %} {% comment %} Con extends se implementa la base que
 creamos, y el block content es lo que sera renderizado, de esta manera el HTML
 es reusable {% endcomment %}
