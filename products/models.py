@@ -11,6 +11,9 @@ class Product(models.Model):
     photo = models.ImageField(
         upload_to="logos", null=True, blank=True, verbose_name="photo"
     )
+    created_at = models.DateTimeField(
+        auto_now_add=True, verbose_name="Created At", null=True
+    )
 
     def __str__(self):
         return self.name
