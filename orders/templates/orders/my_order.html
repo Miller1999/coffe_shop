@@ -1,0 +1,4 @@
+{% extends "base.html" %} {% block content %} {{order.user.username}}
+{{order.order_date|date}} {% for product_order in order.orderproduct_set.all %}
+{{product_order.procduct.name}} {{product_order.procduct.price}} {% empty %} No
+details {% endfor %} {% endblock content %}
