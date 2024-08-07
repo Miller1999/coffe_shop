@@ -136,4 +136,5 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 LOGIN_REDIRECT_URL = "list_product"
 LOGOUT_REDIRECT_URL = "list_product"
 
+LOGIN_URL = "login"
 # Se uso crispy tailwind y los cambios hechos aca vienen de esa instalacion

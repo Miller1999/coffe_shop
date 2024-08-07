@@ -1,16 +1,14 @@
-from typing import Any
-from django.db.models.base import Model as Model
-from django.db.models.query import QuerySet
-from django.views.generic import DetailView
+from django.views.generic import DetailView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 
 from .models import Order
 
-# Create your views here.
 
-
-class MyOrderView(DetailView):
+class MyOrderView(LoginRequiredMixin, DetailView):
     model = Order
     template_name = "orders/my_order.html"
+    context_object_name = "order"
 
-    def get_object(self, queryset=None) -> Model:
-        return Order.objects.filter(is_active=True).first()
+    def get_object(self, queryset=None):
+        return Order.objects.filter(is_active=True, user=self.request.user).first()
