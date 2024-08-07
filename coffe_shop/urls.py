@@ -23,8 +23,8 @@ from django.conf import settings
 # Se añaden las urls personalizadas de las apps que creemos usando include
 
 urlpatterns = [
+    path("", include("products.urls")),
     path("admin/", admin.site.urls),
-    path("products/", include("products.urls")),
     path("users/", include("users.urls")),
     path("orders/", include("orders.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
